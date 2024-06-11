@@ -1,0 +1,52 @@
+[
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Header",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BookCreateModel",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class BookCreateModel(BaseModel):\n    title : str\n    author : str\n@app.post('/create_book')\nasync def create_book(book_data:BookCreateModel):\n    return {\n        \"title\":book_data.title,\n        \"author\":book_data.author\n    }\n@app.get('/get_headers', status_code=500)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "app = FastAPI()\n@app.get('/')\nasync def read_root():\n    return {\"message\": \"Hello world\"}\n@app.get('/greet')\nasync def greet_name(name:Optional[str] = \"User\",\n                     age:int = 0) -> dict:\n    return {\"message\":f\"Hello {name}\", \"age\":age}\nclass BookCreateModel(BaseModel):\n    title : str",
+        "detail": "main",
+        "documentation": {}
+    }
+]
